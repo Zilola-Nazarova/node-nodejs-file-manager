@@ -1,5 +1,5 @@
 import { up, cd, ls } from './commands/nwd.js';
-import { cat, add, rm } from './commands/files.js';
+import { cat, add, rn, copy, rm } from './commands/files.js';
 import { osInfo } from './commands/os.js';
 import hash from './commands/hash.js';
 import { compress, decompress } from './commands/zip.js';
@@ -16,6 +16,10 @@ export const execute = async (command, args, currentDir) => {
       return await cat(currentDir, args);
     case 'add':
       return await add(currentDir, args);
+    case 'rn':
+      return await rn(currentDir, args);
+    case 'cp':
+      return await copy(currentDir, args);
     case 'rm':
       return await rm(currentDir, args);
     case 'os':
