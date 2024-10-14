@@ -1,0 +1,26 @@
+{
+  "name": "nodejs-file-manager",
+  "version": "1.0.0",
+  "description": "This is RS School Node.js assignment",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Zilola-Nazarova/node-nodejs-file-manager.git"
+  },
+  "keywords": [
+    "nodejs",
+    "cli",
+    "streams",
+    "hash"
+  ],
+  "author": "Zilola-Nazarova",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Zilola-Nazarova/node-nodejs-file-manager/issues"
+  },
+  "homepage": "https://github.com/Zilola-Nazarova/node-nodejs-file-manager#readme"
+}
