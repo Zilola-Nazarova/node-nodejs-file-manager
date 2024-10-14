@@ -2,7 +2,6 @@ import { resolve } from 'node:path';
 import { readdir } from 'node:fs/promises';
 
 export const up = async (currentDir) => {
-  console.log("UP");
   try {
     const newPath = resolve(currentDir.path, '..');
     await readdir(newPath);

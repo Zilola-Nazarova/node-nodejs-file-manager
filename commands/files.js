@@ -77,6 +77,26 @@ export const copy = async (currentDir, args) => {
   }
 };
 
+export const mv = async (currentDir, args) => {
+  if (args.length !== 2) {
+    throw new Error('Invalid Input');
+  }
+
+  const oldFilePath = resolve(currentDir.path, args[0]);
+  const newFilePath = resolve(currentDir.path, args[1], basename(oldFilePath));
+
+  try {
+    await cp(oldFilePath, newFilePath);
+    await unlink(oldFilePath);
+  } catch (error) {
+    if (error.code === 'ENOENT') {
+      throw new Error('FS operation failed');
+    } else {
+      throw error;
+    }
+  }
+};
+
 export const rm = async (currentDir, args) => {
   if (args.length !== 1) {
     throw new Error('Invalid Input');
